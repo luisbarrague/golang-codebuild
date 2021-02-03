@@ -4,6 +4,12 @@ files:
   - source: /              
     destination: /home/ec2-user/GoSample                
 hooks:
+
+  ApplicationStop:
+  - location: scripts/stop_server.sh
+    timeout: 300    
+    runas: root            
+  ApplicationStart:                                                                  
   BeforeInstall:                      
   - location: scripts/install_dependencies.sh        
     timeout: 300    

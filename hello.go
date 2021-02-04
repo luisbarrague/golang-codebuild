@@ -14,7 +14,7 @@ func homePage(w http.ResponseWriter, r *http.Request){
 
 func handleRequests() {
 	http.HandleFunc("/", homePage)
-	log.Fatal(http.ListenAndServe(":80", nil))
+	log.Fatal(http.ListenAndServe("0.0.0.0:80", nil))
 }
 
 func main() {

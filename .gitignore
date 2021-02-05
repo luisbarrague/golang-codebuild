@@ -1,3 +1,3 @@
 golang-codebuild.exe
 .idea*
-
+.env

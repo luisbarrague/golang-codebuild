@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/joho/godotenv"
 	"log"
-	"net/http"	
+	"net/http"
 	"os"
 )
 
@@ -25,6 +25,10 @@ func handleRequests() {
 }
 
 func main() {
-	godotenv.Load()
+	err := godotenv.Load()
+	if err != nil {
+		num, err2 := fmt.Fprintf(os.Stderr, "Fprintf: %v\n", err)
+		fmt.Printf("%d bytes written, error found: %v.\n", num,err2)
+	}
 	handleRequests()
 }
